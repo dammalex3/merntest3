@@ -1,0 +1,18 @@
+.form-control {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.image-input {
+    margin-bottom: 20px;
+}
+
+.card {
+    float: left;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 200px;
+    height: 200px;
+    margin: 1rem;
+  }
