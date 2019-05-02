@@ -15,9 +15,12 @@ var db = require("./models");
 // if (process.env.NODE_ENV === "production") { app.use(express.static("client/build")); }
 
 cloudinary.config({ 
-  cloud_name: keys.cloudify.cloud_name, 
-  api_key: keys.cloudify.api_key, 
-  api_secret: keys.cloudify.api_secret
+  cloud_name: 'dkyslzmp8', 
+  api_key: '545814922165948', 
+  api_secret: 'Sj484O8HTdYRAFB3_Q7WDEeElKw'
+  // cloud_name: keys.cloudify.cloud_name, 
+  // api_key: keys.cloudify.api_key, 
+  // api_secret: keys.cloudify.api_secret
 })
 
 app.use(formData.parse())
@@ -117,8 +120,6 @@ app.get('/api/posts', function(req, res){
     res.json(data);
   });
 })
-
-var syncOptions = { force: true };
 
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
