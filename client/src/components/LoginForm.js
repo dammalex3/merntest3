@@ -26,8 +26,6 @@ class LoginForm extends Component {
     // When the form is submitted, prevent the default event and alert the username and password
     handleFormSubmit = event => {
       event.preventDefault();
-      console.log(this.state.username);
-      console.log(this.state.password);
       $.ajax({
         method: "POST",
         url: "/api/users/login",
@@ -55,25 +53,36 @@ class LoginForm extends Component {
             return <Redirect to='/Events' />
           }
       return (
-        <form>
-          <p>Username: {this.state.username}</p>
-          <p>Password: {this.state.password}</p>
-          <input
-            type="text"
-            placeholder="Username"
-            name="username"
-            value={this.state.username}
-            onChange={this.handleInputChange}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleInputChange}
-          />
-          <button onClick={this.handleFormSubmit}>Submit</button>
-        </form>
+        <div id="login-form-container" className="col-md-5">
+          <form>
+            <h3 className="text-center">Sign In</h3>
+            <div className="form-group">
+              <input
+                type="email"
+                className="form-control"
+                id="emailInput"
+                placeholder="Email"
+                name="username"
+                value={this.state.username}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Password"
+                name="password"
+                value={this.state.password}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div id="buttonDiv">
+              <button type="button" className="btn btn-dark btn-block" onClick={this.handleFormSubmit}>Login</button>
+            </div>
+          </form>
+        </div>
+
       );
     }
   }

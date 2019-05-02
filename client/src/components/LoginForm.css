@@ -1,0 +1,13 @@
+#emailInput {
+    margin-top: 0px;
+}
+
+#login-form-container {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px dotted black;
+}
+
+.form-control {
+    margin-top: 0px;
+}

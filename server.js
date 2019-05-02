@@ -42,6 +42,17 @@ app.post("/api/users/login", function (req, res) {
   });
 });
 
+app.post("/api/users/create", function (req, res) {
+  db.Users.create({
+    userName: req.body.userName,
+    pw: req.body.passWord,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName
+  }).then(function (dbUsers) {
+    res.json(dbUsers.id);
+  });
+});
+
 app.post('/api/pic', function(req, res) {
   cloudinary.uploader.upload(req.files[0].path, function(error, result) {
     image_url = result.url;
@@ -76,6 +87,9 @@ app.post('/api/event', function(req, res) {
   console.log(JSON.stringify(req.body));
   db.Events.create({
     eventName: req.body.eventName,
+    eventDate: req.body.eventDate,
+    eventMessage: req.body.eventMessage,
+    eventType: req.body.eventType,
     UserId: req.body.UserId
   }, {
       include: [db.Users]

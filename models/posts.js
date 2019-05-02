@@ -1,9 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
     var Posts = sequelize.define("Posts", {
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-          },
         message: DataTypes.STRING,
         message_from: DataTypes.STRING,
         picture_url: DataTypes.STRING
