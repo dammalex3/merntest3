@@ -4,6 +4,7 @@ import List from "../components/List";
 import ListItem from "../components/ListItem";
 import EventCreateForm from "../components/EventCreateForm"
 import { Link } from "react-router-dom";
+import Nav from "../components/navbar"
 const axios = require('axios');
 
 
@@ -29,31 +30,25 @@ class Events extends Component {
 
     render() {
         return (
-          <div className="container">
-            <div className="row">
-              <div id="events-container col-md-5">
-                <h2>Your Guestbooks</h2>
-                <List>
-                    {this.state.events.map(event => (
-                        <ListItem key={event.id}>
-                        <Link to={"/GuestBook/" + event.id}>
-                            <strong>
-                            {event.eventName}
-                            </strong>
-                        </Link>
-                        {event.eventDate}
-                        </ListItem>
-                    ))}
-                </List>
-              </div>
-            </div>
-            <div className="row">
-              <div id="create-event-container">
-                <EventCreateForm />
-              </div>
-            </div>
-          </div>
-    
+          <div>
+            <Nav />
+            <div className="container text-center">
+              <EventCreateForm />
+              <h3>Your Guestbooks</h3>
+              <List>
+                  {this.state.events.map(event => (
+                      <ListItem key={event.id}>
+                      <Link to={"/GuestBook/" + event.id}>
+                          <strong>
+                          {event.eventName}
+                          </strong>
+                      </Link>
+                      {event.eventDate}
+                      </ListItem>
+                  ))}
+              </List>
+          </div>   
+          </div> 
         );
       }
 }

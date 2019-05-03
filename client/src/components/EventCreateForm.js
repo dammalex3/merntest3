@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import $ from 'jquery';
 import { Redirect } from "react-router-dom";
+import "./EventCreateForm.css";
 
 class EventCreateForm extends Component {
     // Setting the initial values of this.state.username and this.state.password
@@ -50,7 +51,7 @@ class EventCreateForm extends Component {
   
     render() {
       return (
-        <div id="form-container" className="col-md-10">
+        <div className="outer-container">
           <h3 className="text-center">Create a New Guestbook</h3>
           <form>
           <div className="form-group">
@@ -97,7 +98,7 @@ class EventCreateForm extends Component {
             />
           </div>
 
-          <button type="button" className="btn btn-dark btn-block" onClick={this.handleFormSubmit}>Sign Up</button>
+          <button type="button" className="btn btn-dark btn-block" onClick={this.handleFormSubmit}>Create Guestbook</button>
         </form>
         </div>
         
