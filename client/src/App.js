@@ -5,6 +5,7 @@ import GuestInput from "./pages/GuestInput";
 import GuestBook from "./pages/GuestBook"
 import Login from "./pages/Login"
 import Events from "./pages/Events"
+import Confirm from "./pages/Confirm"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/GuestBook/:EventId" component={GuestBook} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Events" component={Events} />
+          <Route exact path="/Confirm" component={Confirm} />
         </Switch>
     </Router>
   );

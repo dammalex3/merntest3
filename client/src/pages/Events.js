@@ -31,24 +31,26 @@ class Events extends Component {
         return (
           <div className="container">
             <div className="row">
-            <div id="events-container col-md-5">
-              <h2>Your Guestbooks</h2>
-              <List>
-                  {this.state.events.map(event => (
-                      <ListItem key={event.id}>
-                      <Link to={"/GuestBook/" + event.id}>
-                          <strong>
-                          {event.eventName}
-                          </strong>
-                      </Link>
-                      {event.eventDate}
-                      </ListItem>
-                  ))}
-              </List>
+              <div id="events-container col-md-5">
+                <h2>Your Guestbooks</h2>
+                <List>
+                    {this.state.events.map(event => (
+                        <ListItem key={event.id}>
+                        <Link to={"/GuestBook/" + event.id}>
+                            <strong>
+                            {event.eventName}
+                            </strong>
+                        </Link>
+                        {event.eventDate}
+                        </ListItem>
+                    ))}
+                </List>
+              </div>
             </div>
-            <div id="create-event-container">
-              <EventCreateForm />
-            </div>
+            <div className="row">
+              <div id="create-event-container">
+                <EventCreateForm />
+              </div>
             </div>
           </div>
     

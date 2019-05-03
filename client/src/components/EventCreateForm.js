@@ -41,8 +41,6 @@ class EventCreateForm extends Component {
         console.log(response);
         if (response === false) {
             alert('There was an issue creating your event, please try again')
-            $("#username-input").val("")
-            $("#pw-input").val("")
         } else {
           alert("Successfully created your new guestbook");
           window.location.reload();
@@ -52,7 +50,7 @@ class EventCreateForm extends Component {
   
     render() {
       return (
-        <div id="form-container" className="col-md-8">
+        <div id="form-container" className="col-md-10">
           <h3 className="text-center">Create a New Guestbook</h3>
           <form>
           <div className="form-group">

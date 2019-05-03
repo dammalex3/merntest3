@@ -1,0 +1,10 @@
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions-div {
+    margin-left: 0px;
+    padding-left: 0px;
+}

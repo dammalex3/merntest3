@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import $ from 'jquery';
 import "./guestInputStyle.css";
+import { Redirect } from "react-router-dom";
 
 
 class GuestInput extends Component {
@@ -9,7 +10,8 @@ class GuestInput extends Component {
   state = {
     message: "",
     from: "",
-    image_url: ""
+    image_url: "",
+    to_confirm: ""
   };
 
   handleInputChange = event => {
@@ -54,11 +56,17 @@ class GuestInput extends Component {
         EventId: "1"
       }
     }).done(function (data) {
-      console.log(data);
-    })
+      this.setState({
+        toHome: true
+      })
+      // alert("Your message has been added to the guestbook");
+    }.bind(this))
   };
 
   render() {
+    if (this.state.toHome === true) {
+      return <Redirect to='/Confirm' />
+    }
     return (
       <div className="container">
         <div>
